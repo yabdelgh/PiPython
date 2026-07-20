@@ -1,4 +1,6 @@
-def give_bmi(height: list[int | float], weight: list[int | float]) -> list[int | float]:
+def give_bmi(
+    height: list[int | float], weight: list[int | float]
+) -> list[int | float]:
     """
     Calculate BMI for each pair of height and weight.
     Args:
@@ -11,10 +13,11 @@ def give_bmi(height: list[int | float], weight: list[int | float]) -> list[int |
     """
     if len(height) != len(weight):
         raise ValueError("Height and weight lists must have the same length.")
-    if not all(isinstance(x, (int, float)) for x in height) or \
-       not all(isinstance(x, (int, float)) for x in weight):
+    if not all(isinstance(x, (int, float)) for x in height) or not all(
+        isinstance(x, (int, float)) for x in weight
+    ):
         raise ValueError("All elements must be int or float.")
-    return [w / (h ** 2) for h, w in zip(height, weight)]
+    return [w / (h**2) for h, w in zip(height, weight)]
 
 
 def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
@@ -30,7 +33,6 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
 
 
 def main():
-    # Test code
     height = [2.71, 1.15]
     weight = [165.3, 38.4]
     bmi = give_bmi(height, weight)
@@ -40,20 +42,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-# import numpy as np
-
-
-# def give_bmi(height: list[int | float],
-#              weight: list[int | float]) -> list[int | float]:
-#     npH = np.array(height)
-#     npW = np.array(weight)
-#     assert npH.shape == npW.shape, "bad arguments"
-#     assert np.issubdtype(npH.dtype, np.number), "bad arguments"
-#     assert np.issubdtype(npW.dtype, np.number), "bad arguments"
-#     return list(npW / (npH * npH))
-
-
-# def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
-#     npBmi = np.array(bmi)
-#     return list(npBmi > limit)
