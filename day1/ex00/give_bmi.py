@@ -9,7 +9,8 @@ def give_bmi(
     Returns:
         list of BMI values (float)
     Raises:
-        ValueError: if lists have different lengths or contain non-numeric types.
+        ValueError: if lists have different lengths or contain
+        non-numeric types.
     """
     if len(height) != len(weight):
         raise ValueError("Height and weight lists must have the same length.")
