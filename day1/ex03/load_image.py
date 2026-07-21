@@ -36,6 +36,9 @@ def ft_load(path: str) -> np.ndarray:
 
 
 def main():
+    """
+    Docstring for main
+    """
     print(ft_load("landscape.jpg"))
 
 

@@ -2,10 +2,11 @@ from PIL import Image
 from numpy import array
 import matplotlib.pyplot as plt
 
-# import numpy as np
-
 
 def main():
+    """
+    Docstring for main
+    """
     img = Image.open("animal.jpeg")
     img = img.crop((400, 100, 800, 500)).convert("L")
     arr = array(img).reshape(img.size[0], img.size[1], 1)

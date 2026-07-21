@@ -33,6 +33,9 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
 
 
 def main():
+    """
+    Docstring for main
+    """
     height = [2.71, 1.15]
     weight = [165.3, 38.4]
     bmi = give_bmi(height, weight)
@@ -41,4 +44,7 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as e:
+        print(f"Error: {e}")
