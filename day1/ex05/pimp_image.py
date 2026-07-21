@@ -47,8 +47,8 @@ def ft_blue(array: np.ndarray) -> np.ndarray:
 
 def ft_grey(array: np.ndarray) -> np.ndarray:
     """
-    Converts the image to grayscale by taking the green channel and replicating it.
-    Allowed operators: =, /
+    Converts the image to grayscale by taking the green
+    channel and replicating it. Allowed operators: =, /
     """
     grey = array.copy()
     green = grey[:, :, 1]
